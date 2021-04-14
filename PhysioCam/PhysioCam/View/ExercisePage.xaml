@@ -24,7 +24,7 @@
             <Style x:Name="ExerciseButton" TargetType="Button">
                 <Setter Property="BorderColor" Value="Black"/>
                 <Setter Property="BorderWidth" Value="1"/>
-                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="HeightRequest" Value="60"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -43,7 +43,12 @@
                         <ImageButton x:Name="ExerciseThirdImage" Style="{DynamicResource CameraImageButton}" Clicked="ImageButton_Clicked"/>
                     </Frame>
                 </StackLayout>
-                <Frame BorderColor="Black" WidthRequest="380" HeightRequest="50" Padding="0">
+                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+                    <Button Text="Add from gallery" x:Name="ExerciseAddFromGallery1" Style="{DynamicResource ExerciseButton}" WidthRequest="100" HorizontalOptions="StartAndExpand" Clicked="GalleryButton_Clicked"></Button>
+                    <Button Text="Add from gallery" x:Name="ExerciseAddFromGallery2" Style="{DynamicResource ExerciseButton}" WidthRequest="100" HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Add from gallery" x:Name="ExerciseAddFromGallery3" Style="{DynamicResource ExerciseButton}" WidthRequest="100" HorizontalOptions="EndAndExpand"></Button>
+                </StackLayout>
+                    <Frame BorderColor="Black" WidthRequest="380" HeightRequest="50" Padding="0">
                     <custom:CustomEditor x:Name="ExerciseName" Placeholder="Name of the exercise"></custom:CustomEditor>
                 </Frame>
                 <Frame BorderColor="Black" WidthRequest="380" HeightRequest="200" Padding="0" >
