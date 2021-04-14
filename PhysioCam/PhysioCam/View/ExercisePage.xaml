@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhysioCam.View.ExercisePage"
              xmlns:local="clr-namespace:PhysioCam.Extensions"
+             xmlns:custom="clr-namespace:PhysioCam.CustomItems"
              Title="New Exercise">
     <ContentPage.ToolbarItems>
         
@@ -15,32 +16,45 @@
                 <Setter Property="Source" Value="{local:ImageResource PhysioCam.Images.TestCamera.png}"/>
             </Style>
 
-            <Style x:Name="CameraButtonFrame" TargetType="Frame">
+            <Style x:Name="CameraFrame" TargetType="Frame">
                 <Setter Property="BorderColor" Value="Black"/>
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
                 <Setter Property="WidthRequest" Value="60"/>
+            </Style>
+
+            <Style x:Name="ExerciseButton" TargetType="Button">
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="HeightRequest" Value="50"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="Transparent" Padding="15" Spacing="20" Orientation="Vertical">
             <StackLayout Orientation="Vertical">
-                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent" Margin="0,20,0,0">
-                    <Frame Style="{StaticResource CameraButtonFrame}">
+                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+                    <Frame x:Name="ExerciseFrameFirstImage" Style="{DynamicResource CameraFrame}" HorizontalOptions="StartAndExpand">
                         <ImageButton x:Name="ExerciseFirstImage" Style="{DynamicResource CameraImageButton}" Clicked="ImageButton_Clicked"/>
                     </Frame>
-                    <Frame Style="{StaticResource CameraButtonFrame}">
+                    <Frame x:Name="ExerciseFrameSecondImage" Style="{DynamicResource CameraFrame}" HorizontalOptions="CenterAndExpand">
                         <ImageButton x:Name="ExerciseSecondImage" Style="{DynamicResource CameraImageButton}" Clicked="ImageButton_Clicked"/>
                     </Frame>
-                    <Frame Style="{StaticResource CameraButtonFrame}">
+                    <Frame x:Name="ExerciseFrameThirdImage" Style="{DynamicResource CameraFrame}" HorizontalOptions="EndAndExpand">
                         <ImageButton x:Name="ExerciseThirdImage" Style="{DynamicResource CameraImageButton}" Clicked="ImageButton_Clicked"/>
                     </Frame>
                 </StackLayout>
-                <Editor x:Name="ExerciseName" Placeholder="Name of the exercise"></Editor>
-                <Editor x:Name="ExerciseDescription" Placeholder="Description"></Editor>
-                <StackLayout Orientation="Horizontal" >
+                <Frame BorderColor="Black" WidthRequest="380" HeightRequest="50" Padding="0">
+                    <custom:CustomEditor x:Name="ExerciseName" Placeholder="Name of the exercise"></custom:CustomEditor>
+                </Frame>
+                <Frame BorderColor="Black" WidthRequest="380" HeightRequest="200" Padding="0" >
+                    <custom:CustomEditor x:Name="ExerciseDescription" Placeholder="Description"></custom:CustomEditor>
+                </Frame>
+                <!--<Button Text="Save as standard exercise" x:Name="ExerciseSaveAsStandard" Style="{DynamicResource ExerciseButton}" ContentLayout="right, 5" ImageSource="{local:ImageResource PhysioCam.Images.TestCamera.png}" BackgroundColor="Transparent"/>-->
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="ExerciseLabelSaveAsStandard" Text="Save as standard exercise" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                    <CheckBox x:Name="ExerciseSaveAsStandard" Color="Green" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
+                <Button Text="Add to program" x:Name="ExerciseAddToProgram" Style="{DynamicResource ExerciseButton}"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
