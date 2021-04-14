@@ -34,5 +34,18 @@
     <string>PhysioCam</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+    
+    <!--Keys for camera usage-->
+    <key>NSCameraUsageDescription</key>
+    <string>Access to camera</string>
+  
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Access to microphone</string>
+  
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Access to gallery</string>
+  
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Access to gallery</string>
 </dict>
 </plist>

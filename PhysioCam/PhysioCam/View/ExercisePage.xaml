@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.View.ExercisePage"
+             xmlns:local="clr-namespace:PhysioCam.Extensions"
+             Title="New Exercise">
+    <ContentPage.ToolbarItems>
+        
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Name="CameraImageButton" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Source" Value="{local:ImageResource PhysioCam.Images.TestCamera.png}"/>
+            </Style>
+
+            <Style x:Name="CameraButtonFrame" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="WidthRequest" Value="60"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent" Margin="0,20,0,0">
+                    <Frame Style="{StaticResource CameraButtonFrame}">
+                        <ImageButton x:Name="ExerciseFirstImage" Style="{DynamicResource CameraImageButton}" Clicked="ImageButton_Clicked"/>
+                    </Frame>
+                    <Frame Style="{StaticResource CameraButtonFrame}">
+                        <ImageButton x:Name="ExerciseSecondImage" Style="{DynamicResource CameraImageButton}" Clicked="ImageButton_Clicked"/>
+                    </Frame>
+                    <Frame Style="{StaticResource CameraButtonFrame}">
+                        <ImageButton x:Name="ExerciseThirdImage" Style="{DynamicResource CameraImageButton}" Clicked="ImageButton_Clicked"/>
+                    </Frame>
+                </StackLayout>
+                <Editor x:Name="ExerciseName" Placeholder="Name of the exercise"></Editor>
+                <Editor x:Name="ExerciseDescription" Placeholder="Description"></Editor>
+                <StackLayout Orientation="Horizontal" >
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
