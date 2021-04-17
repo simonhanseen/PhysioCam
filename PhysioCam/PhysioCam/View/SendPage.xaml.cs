@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PhysioCam.View;
-using Xamarin.Forms;
 
-namespace PhysioCam
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace PhysioCam.View
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class SendPage : ContentPage
     {
-        public MainPage()
+        public SendPage()
         {
             InitializeComponent();
-            Navigation.PushAsync(new SendPage());
         }
     }
 }
