@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.View.ProgramPage"
+             xmlns:local="clr-namespace:PhysioCam.Extensions"
+             Title="Program page">
+    <ContentPage.ToolbarItems>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Name="CameraImageButton" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Source" Value="{local:ImageResource PhysioCam.Images.TestCamera.png}"/>
+            </Style>
+
+            <Style x:Name="CameraFrame" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="WidthRequest" Value="60"/>
+            </Style>
+
+            <Style x:Name="ExerciseButton" TargetType="Button">
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="HeightRequest" Value="60"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
