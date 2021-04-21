@@ -3,6 +3,10 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">d
     
+    <Style TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}" />
+    </Style>
+    
     <Style TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource MainFontColor}" />
         <Setter Property="FontSize" Value="{DynamicResource BodyTextSize}" />
@@ -31,6 +35,7 @@
         <Setter Property="CornerRadius" Value="2" />
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="FontSize" Value="20" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource MainColor}" />
     </Style>
     
 </ResourceDictionary>

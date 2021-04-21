@@ -44,8 +44,9 @@
     </EmbeddedResource>
     <EmbeddedResource Update="View\ExercisePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\TestPage.xaml">
+    <EmbeddedResource Update="View\SendPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

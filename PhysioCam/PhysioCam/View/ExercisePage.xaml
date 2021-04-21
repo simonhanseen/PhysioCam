@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhysioCam.View.ExercisePage"
              xmlns:local="clr-namespace:PhysioCam.Extensions"
+             BackgroundColor="{DynamicResource MainBackgroundColor}"
              Title="New Exercise">
     <ContentPage.ToolbarItems>
         
@@ -17,6 +18,7 @@
 
             <Style x:Name="CameraFrame" TargetType="Frame">
                 <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="Transparent" />
             </Style>
 
             <Style x:Name="ExerciseButton" TargetType="Button">
@@ -28,7 +30,7 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Transparent" Padding="15" Orientation="Vertical">
+        <StackLayout Padding="15" Orientation="Vertical">
             <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
                     <Frame x:Name="ExerciseFrameFirstImage" Style="{DynamicResource CameraFrame}" HorizontalOptions="FillAndExpand">
                         <ImageButton x:Name="ExerciseFirstImage" Style="{DynamicResource CameraImageButton}" Clicked="ImageButton_Clicked"/>

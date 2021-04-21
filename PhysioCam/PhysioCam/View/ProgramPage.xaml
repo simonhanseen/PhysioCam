@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhysioCam.View.ProgramPage"
              xmlns:local="clr-namespace:PhysioCam.Extensions"
-             Title="Program page">
+             BackgroundColor="{DynamicResource MainBackgroundColor}"
+             Title="Program">
     <ContentPage.ToolbarItems>
 
     </ContentPage.ToolbarItems>
