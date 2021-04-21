@@ -15,14 +15,14 @@
             
             <StackLayout class="InputField">
                 <Label StyleClass="InputText" Text="Client Email *" />
-                <Frame BorderColor="White" BackgroundColor="Transparent">
+                <Frame BorderColor="Black" BackgroundColor="Transparent">
                     <Entry StyleClass="EmailPlaceholderText" Margin="0" IsTextPredictionEnabled="False" />
                 </Frame>
             </StackLayout>
             
             <StackLayout class="InputField">
                 <Label StyleClass="InputText" Text="Your Email *" />
-                <Frame BorderColor="White" BackgroundColor="Transparent">
+                <Frame BorderColor="Black" BackgroundColor="Transparent">
                     <Entry StyleClass="EmailPlaceholderText" Margin="0" IsTextPredictionEnabled="False" />
                 </Frame>
             </StackLayout>
@@ -30,8 +30,8 @@
             <StackLayout class="InputField" VerticalOptions="FillAndExpand">
                 <Label StyleClass="InputText" Text="Message (Optional)" />
                 
-                <Frame BorderColor="White" BackgroundColor="Transparent" VerticalOptions="FillAndExpand">
-                    <Editor VerticalOptions="FillAndExpand" StyleClass="EmailPlaceholderText" IsTextPredictionEnabled="False" />
+                <Frame BorderColor="Black" BackgroundColor="Transparent" VerticalOptions="FillAndExpand">
+                    <Editor VerticalOptions="FillAndExpand" IsTextPredictionEnabled="False" />
                 </Frame>
             </StackLayout>
             

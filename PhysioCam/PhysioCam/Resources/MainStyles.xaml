@@ -3,8 +3,8 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">d
     
-    <Style TargetType="ContentPage">
-        <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}" />
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource MainColor}" />
     </Style>
     
     <Style TargetType="Label">
@@ -15,6 +15,13 @@
     <Style TargetType="Entry">
         <Setter Property="TextColor" Value="{DynamicResource MainFontColor}" />
         <Setter Property="FontSize" Value="{DynamicResource BodyTextSize}" />
+        <Setter Property="PlaceholderColor" Value="{DynamicResource DimmedFontColor}" />
+    </Style>
+    
+    <Style TargetType="Editor">
+        <Setter Property="TextColor" Value="{DynamicResource MainFontColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource BodyTextSize}" />
+        <Setter Property="PlaceholderColor" Value="{DynamicResource DimmedFontColor}" />
     </Style>
     
     <Style Class="InputText" TargetType="Label">

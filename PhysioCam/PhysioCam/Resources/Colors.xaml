@@ -4,10 +4,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     
     <Color x:Key="MainColor">ForestGreen</Color>
-    <Color x:Key="MainBackgroundColor">DarkSlateGray</Color>
+    <Color x:Key="MainBackgroundColor">White</Color>
     <Color x:Key="SecondaryColor">MediumBlue</Color>
     
-    <Color x:Key="MainFontColor">White</Color>
+    <Color x:Key="MainFontColor">Black</Color>
+    <Color x:Key="DimmedFontColor">DimGray</Color>
     
     <Color x:Key="SuccessColor">LimeGreen</Color>
     <Color x:Key="WarningColor">Yellow</Color>
