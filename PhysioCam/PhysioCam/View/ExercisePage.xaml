@@ -24,7 +24,7 @@
             <Style x:Name="ExerciseButton" TargetType="Button">
                 <Setter Property="BorderColor" Value="Black"/>
                 <Setter Property="BorderWidth" Value="1"/>
-                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="HeightRequest" Value="80"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
