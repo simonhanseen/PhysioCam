@@ -1,9 +1,11 @@
-﻿using System;
+﻿using PhysioCam.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PhysioCam.View;
 using Xamarin.Forms;
 
 namespace PhysioCam
@@ -13,6 +15,12 @@ namespace PhysioCam
         public MainPage()
         {
             InitializeComponent();
+            Navigation.PushAsync(new ExercisePage());
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ExercisePage());
         }
     }
 }

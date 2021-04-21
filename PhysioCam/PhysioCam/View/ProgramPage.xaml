@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.View.ProgramPage"
+             xmlns:local="clr-namespace:PhysioCam.Extensions"
+             Title="Program page">
+    <ContentPage.ToolbarItems>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Name="CameraImageButton" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Source" Value="{local:ImageResource PhysioCam.Images.TestCamera.png}"/>
+            </Style>
+
+            <Style x:Name="CameraFrame" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="WidthRequest" Value="1000"/>
+                <Setter Property="HeightRequest" Value="100"/>
+            </Style>
+
+            <Style x:Name="ProgramButton" TargetType="Button">
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="HeightRequest" Value="40"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Transparent" Padding="15" Spacing="20" Orientation="Vertical">
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+                    <Frame x:Name="ExerciseFrameFirstImage" Style="{DynamicResource CameraFrame}" HorizontalOptions="CenterAndExpand">
+                        <ImageButton x:Name="ExerciseFirstImage" Style="{DynamicResource CameraImageButton}"/>
+                    </Frame>
+                </StackLayout>
+                <Button Text="Show exercises" x:Name="ShowExercise" Style="{DynamicResource ProgramButton}"></Button>
+                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+                    <Frame x:Name="ExerciseList" Style="{DynamicResource CameraFrame}" HeightRequest="250">
+                        <ListView 
+                            x:Name="MyListView"
+                            ItemsSource="{Binding Items}"
+                            ItemTapped="Handle_ItemTapped"
+                            CachingStrategy="RecycleElement"/>
+                    </Frame>
+                </StackLayout>
+                <Button Text="Save/Send Program" x:Name="SendToProgram" Style="{DynamicResource ProgramButton}"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
