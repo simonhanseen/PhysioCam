@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">d
+    
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource MainFontColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource BodyTextSize}" />
+    </Style>
+    
+    <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="{DynamicResource MainFontColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource BodyTextSize}" />
+    </Style>
+    
+    <Style Class="InputText" TargetType="Label">
+        <Setter Property="Padding" Value="0 0 0 4" />
+        <Setter Property="FontSize" Value="{DynamicResource InputFontSize}" />
+    </Style>
+    
+    <Style Class="InputField" TargetType="StackLayout">
+        <Setter Property="Margin" Value="0 0 22 0" />
+    </Style>
+    
+    <Style Class="EmailPlaceholderText" TargetType="Entry">
+        <Setter Property="Placeholder" Value="example@example.domain" />
+    </Style>
+    
+    <Style TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="20" />
+    </Style>
+    
+</ResourceDictionary>
