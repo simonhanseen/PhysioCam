@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.View.SendPage"
+             BackgroundColor="{DynamicResource MainBackgroundColor}">
+    <ContentPage.Content>
+        
+        <StackLayout Padding="32">
+            
+            <Label Text="Finish Program" Style="{DynamicResource PageHeader}" 
+                   VerticalOptions="Start"
+                   HorizontalOptions="Center" />
+            
+            <StackLayout class="InputField">
+                <Label StyleClass="InputText" Text="Client Email *" />
+                <Frame BorderColor="White" BackgroundColor="Transparent">
+                    <Entry StyleClass="EmailPlaceholderText" Margin="0" IsTextPredictionEnabled="False" />
+                </Frame>
+            </StackLayout>
+            
+            <StackLayout class="InputField">
+                <Label StyleClass="InputText" Text="Your Email *" />
+                <Frame BorderColor="White" BackgroundColor="Transparent">
+                    <Entry StyleClass="EmailPlaceholderText" Margin="0" IsTextPredictionEnabled="False" />
+                </Frame>
+            </StackLayout>
+            
+            <StackLayout class="InputField" VerticalOptions="FillAndExpand">
+                <Label StyleClass="InputText" Text="Message (Optional)" />
+                
+                <Frame BorderColor="White" BackgroundColor="Transparent" VerticalOptions="FillAndExpand">
+                    <Editor VerticalOptions="FillAndExpand" StyleClass="EmailPlaceholderText" IsTextPredictionEnabled="False" />
+                </Frame>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Review" BackgroundColor="{DynamicResource SecondaryColor}" />
+                <Button Text="Send" BackgroundColor="{DynamicResource SuccessColor}" />
+            </StackLayout>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
