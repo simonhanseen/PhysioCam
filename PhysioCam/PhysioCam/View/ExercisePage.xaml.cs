@@ -37,26 +37,64 @@ namespace PhysioCam.View
             }
             catch(Exception ex)
             {
-                await DisplayAlert("Error", "Error when adding photo to exercise", "OK");
+                await DisplayAlert("Error", $"Error when adding photo to exercise: {ex.Message.ToString()}", "OK");
             }
             
         }
 
-        private async void GalleryButton_Clicked(object sender, EventArgs e)
+        private async void GalleryButton1_Clicked(object sender, EventArgs e)
         {
             try
             {
                 var photo = await MediaPicker.PickPhotoAsync();
                 await LoadPhotoAsync(photo);
-                //if (PhotoPath != null)
-                //    button.Source = ImageSource.FromFile(PhotoPath);
-                //else
-                //    button.Source = ImageSource.FromResource("PhysioCam.Images.TestCamera.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+                if (PhotoPath != null)
+                    ExerciseFirstImage.Source = ImageSource.FromFile(PhotoPath);
+                else
+                    ExerciseFirstImage.Source = ImageSource.FromResource("PhysioCam.Images.TestCamera.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
 
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", "Error when adding photo to exercise", "OK");
+                await DisplayAlert("Error", $"Error when adding photo to exercise: {ex.Message.ToString()}", "OK");
+            }
+
+        }
+
+        private async void GalleryButton2_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var photo = await MediaPicker.PickPhotoAsync();
+                await LoadPhotoAsync(photo);
+                if (PhotoPath != null)
+                    ExerciseSecondImage.Source = ImageSource.FromFile(PhotoPath);
+                else
+                    ExerciseSecondImage.Source = ImageSource.FromResource("PhysioCam.Images.TestCamera.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", $"Error when adding photo to exercise: {ex.Message.ToString()}", "OK");
+            }
+
+        }
+
+        private async void GalleryButton3_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var photo = await MediaPicker.PickPhotoAsync();
+                await LoadPhotoAsync(photo);
+                if (PhotoPath != null)
+                    ExerciseThirdImage.Source = ImageSource.FromFile(PhotoPath);
+                else
+                    ExerciseThirdImage.Source = ImageSource.FromResource("PhysioCam.Images.TestCamera.png", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", $"Error when adding photo to exercise: {ex.Message.ToString()}", "OK");
             }
 
         }
