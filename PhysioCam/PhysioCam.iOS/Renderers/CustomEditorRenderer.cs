@@ -1,11 +1,11 @@
 ﻿using PhysioCam.CustomItems;
-using PhysioCam.iOS.CustomItems;
+using PhysioCam.iOS.Renderers;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(CustomEditor), typeof(CustomEditorRenderer))]
-namespace PhysioCam.iOS.CustomItems
+namespace PhysioCam.iOS.Renderers
 {
     class CustomEditorRenderer : EditorRenderer
     {

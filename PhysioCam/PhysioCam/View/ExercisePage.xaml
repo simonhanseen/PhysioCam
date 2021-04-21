@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhysioCam.View.ExercisePage"
              xmlns:local="clr-namespace:PhysioCam.Extensions"
-             xmlns:custom="clr-namespace:PhysioCam.CustomItems"
              Title="New Exercise">
     <ContentPage.ToolbarItems>
         
@@ -47,10 +46,10 @@
                     <Button Text="Add from gallery" x:Name="ExerciseAddFromGallery3" Style="{DynamicResource ExerciseButton}" HorizontalOptions="FillAndExpand" Clicked="GalleryButton3_Clicked"></Button>
                 </FlexLayout>
                     <Frame BorderColor="Black" WidthRequest="380" HeightRequest="50" Padding="0">
-                    <custom:CustomEditor x:Name="ExerciseName" Placeholder="Name of the exercise"></custom:CustomEditor>
+                    <Editor x:Name="ExerciseName" Placeholder="Name of the exercise"></Editor>
                 </Frame>
                 <Frame BorderColor="Black" WidthRequest="380" HeightRequest="200" Padding="0" >
-                    <custom:CustomEditor x:Name="ExerciseDescription" Placeholder="Description"></custom:CustomEditor>
+                    <Editor x:Name="ExerciseDescription" Placeholder="Description"></Editor>
                 </Frame>
                 <!--<Button Text="Save as standard exercise" x:Name="ExerciseSaveAsStandard" Style="{DynamicResource ExerciseButton}" ContentLayout="right, 5" ImageSource="{local:ImageResource PhysioCam.Images.TestCamera.png}" BackgroundColor="Transparent"/>-->
                 <StackLayout Orientation="Horizontal">
