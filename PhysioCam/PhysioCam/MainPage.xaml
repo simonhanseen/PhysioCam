@@ -11,5 +11,7 @@
     <local:SendPage />
     <local:HomePage />
     <local:ProgramPage />
-    <local:SignUpPage />
+    <local:SignUpPage /> 
+    <local:PatientPage />
+    <local:PatientHistory />
 </TabbedPage>

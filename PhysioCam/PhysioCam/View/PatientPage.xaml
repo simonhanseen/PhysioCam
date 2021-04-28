@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PhysioCam.View.PatientPage">
+             x:Class="PhysioCam.View.PatientPage"
+             Title="Patient Page">
+            
     <ContentPage.Content>
         <StackLayout Margin="20">
             <Label Text="Choose Patient" HorizontalOptions="Center" FontSize="Large"/>
-            <Label Text="Search" HorizontalOptions="Center" />
-            <Button Text="" />
+            <SearchBar Placeholder="Search Programs..." />
             <Label Text="All Patients" HorizontalOptions="Center" />
             <Button Text="Patient 1" />
             <Button Text="Patient 1" />
