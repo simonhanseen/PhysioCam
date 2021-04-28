@@ -4,9 +4,13 @@
              x:Class="PhysioCam.App">
     <Application.Resources>
         
+        <!-- Resources -->
         <ResourceDictionary Source="Resources/Colors.xaml" />
         <ResourceDictionary Source="Resources/FontStyles.xaml" />
         <ResourceDictionary Source="Resources/MainStyles.xaml" />
+        
+        <!-- Templates -->
+        <ResourceDictionary Source="Resources/Templates/ButtonControlTemplate.xaml" />
         
     </Application.Resources>
 </Application>

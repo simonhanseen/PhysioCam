@@ -16,6 +16,20 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Images\TestCamera.png" />
+    <EmbeddedResource Include="Images\team-stretching.jpg" />
+    <None Remove="Assets\Fonts\OpenSans\OpenSans-Bold.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\OpenSans\OpenSans-Bold.ttf" />
+    <None Remove="Assets\Fonts\OpenSans\OpenSans-Regular.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\OpenSans\OpenSans-Regular.ttf" />
+    <None Remove="Assets\Icons\photo_library.png" />
+    <EmbeddedResource Include="Assets\Icons\photo_library.png" />
+    <None Remove="Assets\Icons\add_photo.png" />
+    <EmbeddedResource Include="Assets\Icons\add_photo.png" />
+    <None Remove="Assets\Icons\camera.png" />
+    <EmbeddedResource Include="Assets\Icons\camera.png" />
+    <None Remove="Assets\Icons\list_gray.png" />
+    <EmbeddedResource Include="Assets\Icons\list.png" />
+    <None Remove="Assets\Icons\photo_library_big.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,9 +63,5 @@
     <EmbeddedResource Update="View\SendPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Assets" />
   </ItemGroup>
 </Project>

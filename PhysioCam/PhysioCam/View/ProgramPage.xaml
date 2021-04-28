@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhysioCam.View.ProgramPage"
              xmlns:local="clr-namespace:PhysioCam.Extensions"
+             xmlns:templates="clr-namespace:PhysioCam.Resources.Templates;assembly=PhysioCam"
              BackgroundColor="{DynamicResource MainBackgroundColor}"
              Title="Program">
     <ContentPage.ToolbarItems>
@@ -10,46 +11,76 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Name="CameraImageButton" TargetType="ImageButton">
-                <Setter Property="BackgroundColor" Value="Transparent"/>
-                <Setter Property="Source" Value="{local:ImageResource PhysioCam.Images.TestCamera.png}"/>
-            </Style>
-
-            <Style x:Name="CameraFrame" TargetType="Frame">
-                <Setter Property="BorderColor" Value="Black"/>
-                <Setter Property="WidthRequest" Value="1000"/>
-                <Setter Property="HeightRequest" Value="100"/>
-            </Style>
-
-            <Style x:Name="ProgramButton" TargetType="Button">
-                <Setter Property="BorderColor" Value="Black"/>
-                <Setter Property="BorderWidth" Value="1"/>
-                <Setter Property="HeightRequest" Value="40"/>
-            </Style>
-        </ResourceDictionary>
+        <!-- <ResourceDictionary> -->
+        <!--     <Style x:Name="CameraImageButton" TargetType="ImageButton"> -->
+        <!--         <Setter Property="BackgroundColor" Value="Transparent"/> -->
+        <!--         <Setter Property="Source" Value="{local:ImageResource PhysioCam.Images.TestCamera.png}"/> -->
+        <!--     </Style> -->
+        <!-- -->
+        <!--     <Style x:Name="CameraFrame" TargetType="Frame"> -->
+        <!--         <Setter Property="BorderColor" Value="Black"/> -->
+        <!--         <Setter Property="WidthRequest" Value="1000"/> -->
+        <!--         <Setter Property="HeightRequest" Value="100"/> -->
+        <!--     </Style> -->
+        <!-- -->
+        <!--     <Style x:Name="ProgramButton" TargetType="Button"> -->
+        <!--         <Setter Property="BorderColor" Value="Black"/> -->
+        <!--         <Setter Property="BorderWidth" Value="1"/> -->
+        <!--         <Setter Property="HeightRequest" Value="40"/> -->
+        <!--     </Style> -->
+        <!-- </ResourceDictionary> -->
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Transparent" Padding="15" Spacing="20" Orientation="Vertical">
-            <StackLayout Orientation="Vertical">
-                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
-                    <Frame x:Name="ExerciseFrameFirstImage" Style="{DynamicResource CameraFrame}" HorizontalOptions="CenterAndExpand">
-                        <ImageButton x:Name="ExerciseFirstImage" Style="{DynamicResource CameraImageButton}"/>
-                    </Frame>
-                </StackLayout>
-                <Button Text="Show exercises" x:Name="ShowExercise" Style="{DynamicResource ProgramButton}"></Button>
-                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
-                    <Frame x:Name="ExerciseList" Style="{DynamicResource CameraFrame}" HeightRequest="250">
-                        <ListView 
-                            x:Name="MyListView"
-                            ItemsSource="{Binding Items}"
-                            ItemTapped="Handle_ItemTapped"
-                            CachingStrategy="RecycleElement"/>
-                    </Frame>
-                </StackLayout>
-                <Button Text="Save/Send Program" x:Name="SendToProgram" Style="{DynamicResource ProgramButton}"></Button>
+        <StackLayout BackgroundColor="Transparent">
+            <Image Source="{local:ImageResource PhysioCam.Images.team-stretching.jpg}"
+                   HorizontalOptions="FillAndExpand"
+                   HeightRequest="200" Aspect="AspectFill" />
+            
+            <templates:ButtonControlTemplate
+                ControlTemplate="{StaticResource ButtonControlTemplate}"
+                ButtonText="Add a new exercise"
+                ButtonIcon="{local:ImageResource PhysioCam.Assets.Icons.camera.png}" />
+            
+            <Line BackgroundColor="{DynamicResource AccentColor}" HeightRequest="1" />
+            
+            <templates:ButtonControlTemplate
+                ControlTemplate="{StaticResource ButtonControlTemplate}"
+                ButtonText="Standard exercises"
+                ButtonIcon="{local:ImageResource PhysioCam.Assets.Icons.list.png}" />
+            
+            <Line BackgroundColor="{DynamicResource AccentColor}" HeightRequest="1" />
+            <Label Text="Current exercises" FontSize="24" FontFamily="OpenSans-Bold" />
+            <!-- <Line BackgroundColor="{DynamicResource AccentColor}" HeightRequest="1" /> -->
+            
+            <StackLayout x:Name="NoExercisesText" IsVisible="False" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Image Source="{local:ImageResource PhysioCam.Assets.Icons.photo_library.png}" VerticalOptions="Center" />
+                <Label Text="No exercises" VerticalOptions="Center" FontSize="24" />
             </StackLayout>
+                
+            <ListView x:Name="MyListView"
+                      ItemsSource="{Binding Items}" />
+
+            
+            
+            <!-- <StackLayout Orientation="Vertical"> -->
+            <!--     <StackLayout Orientation="Horizontal" BackgroundColor="Transparent"> -->
+            <!--         <Frame x:Name="ExerciseFrameFirstImage" Style="{DynamicResource CameraFrame}" HorizontalOptions="CenterAndExpand"> -->
+            <!--             <ImageButton x:Name="ExerciseFirstImage" Style="{DynamicResource CameraImageButton}"/> -->
+            <!--         </Frame> -->
+            <!--     </StackLayout> -->
+            <!--     <Button Text="Show exercises" x:Name="ShowExercise" Style="{DynamicResource ProgramButton}"></Button> -->
+            <!--     <StackLayout Orientation="Horizontal" BackgroundColor="Transparent"> -->
+            <!--         <Frame x:Name="ExerciseList" Style="{DynamicResource CameraFrame}" HeightRequest="250"> -->
+            <!--             <ListView  -->
+            <!--                 x:Name="MyListView" -->
+            <!--                 ItemsSource="{Binding Items}" -->
+            <!--                 ItemTapped="Handle_ItemTapped" -->
+            <!--                 CachingStrategy="RecycleElement"/> -->
+            <!--         </Frame> -->
+            <!--     </StackLayout> -->
+            <!--     <Button Text="Save/Send Program" x:Name="SendToProgram" Style="{DynamicResource ProgramButton}"></Button> -->
+            <!-- </StackLayout> -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

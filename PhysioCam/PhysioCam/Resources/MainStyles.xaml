@@ -4,24 +4,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     
     <Style TargetType="NavigationPage">
-        <Setter Property="BarBackgroundColor" Value="{DynamicResource MainColor}" />
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource MainBackgroundColor}" />
+        <Setter Property="BarTextColor" Value="{DynamicResource MainFontColor}" />
+        <Setter Property="IconColor" Value="{DynamicResource MainFontColor}" />
     </Style>
     
     <Style TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource MainFontColor}" />
         <Setter Property="FontSize" Value="{DynamicResource BodyTextSize}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontRegular}" />
     </Style>
     
     <Style TargetType="Entry">
         <Setter Property="TextColor" Value="{DynamicResource MainFontColor}" />
         <Setter Property="FontSize" Value="{DynamicResource BodyTextSize}" />
         <Setter Property="PlaceholderColor" Value="{DynamicResource DimmedFontColor}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontRegular}" />
     </Style>
     
     <Style TargetType="Editor">
         <Setter Property="TextColor" Value="{DynamicResource MainFontColor}" />
         <Setter Property="FontSize" Value="{DynamicResource BodyTextSize}" />
         <Setter Property="PlaceholderColor" Value="{DynamicResource DimmedFontColor}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontRegular}" />
     </Style>
     
     <Style Class="InputText" TargetType="Label">
@@ -40,9 +45,10 @@
     <Style TargetType="Button">
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         <Setter Property="CornerRadius" Value="2" />
-        <Setter Property="FontAttributes" Value="Bold" />
-        <Setter Property="FontSize" Value="20" />
-        <Setter Property="BackgroundColor" Value="{DynamicResource MainColor}" />
+        <Setter Property="FontFamily" Value="OpenSans-Regular" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="TextColor" Value="{DynamicResource MainFontColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}" />
     </Style>
     
 </ResourceDictionary>

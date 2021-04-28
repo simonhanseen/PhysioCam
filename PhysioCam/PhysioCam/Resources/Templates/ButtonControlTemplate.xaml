@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:local="clr-namespace:PhysioCam.Extensions;assembly=PhysioCam">
+    
+    <ControlTemplate x:Key="ButtonControlTemplate">
+        
+        <StackLayout x:Name="ButtonLayout"
+                     BackgroundColor="{Binding Source={RelativeSource TemplatedParent}, Path=ButtonBackgroundColor}">
+        
+            <Button HorizontalOptions="FillAndExpand"
+                    Text="{Binding Source={RelativeSource TemplatedParent}, Path=ButtonText}"
+                    BackgroundColor="{Binding Source={RelativeSource TemplatedParent}, Path=ButtonBackgroundColor}"
+                    TextColor="{DynamicResource MainFontColor}"
+                    ImageSource="{Binding Source={RelativeSource TemplatedParent}, Path=ButtonIcon}" />
+            
+        </StackLayout>
+    </ControlTemplate>
+    
+</ResourceDictionary>
