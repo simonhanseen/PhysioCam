@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.View.PatientHistory"
+              Title="Patient History">
+    <ContentPage.Content>
+        <StackLayout Margin="40">
+
+            <Label Text="Choose Program" HorizontalOptions="Center" FontSize="Large"/>
+            <SearchBar Placeholder="Search Programs..." />
+            <Label Text="Date" HorizontalOptions="Start" FontSize="Large" />
+            <Button Text="Program " />
+            <Label Text="Date" HorizontalOptions="Start" FontSize="Large" />
+            <Button Text="Program " />
+            <Label Text="Date" HorizontalOptions="Start" FontSize="Large" />
+            <Button Text="Program " />
+            <Label Text="Date" HorizontalOptions="Start" FontSize="Large" />
+            <Button Text="Program " />
+            <Button Text="More" HorizontalOptions="Center" FontSize="Large"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
