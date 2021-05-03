@@ -6,6 +6,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using PhysioCam.Models;
+using PhysioCam.ViewModels;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,12 +15,16 @@ using Xamarin.Forms.Xaml;
 namespace PhysioCam.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ExercisePage : ContentPage
+    public partial class ExercisePage
     {
         string PhotoPath;
-        public ExercisePage()
+        private ExerciseVm _exerciseVm;
+
+        public ExercisePage(ExerciseVm exerciseVm)
         {
             InitializeComponent();
+
+            BindingContext = exerciseVm;
         }
 
         private async void ImageButton_Clicked(object sender, EventArgs e)

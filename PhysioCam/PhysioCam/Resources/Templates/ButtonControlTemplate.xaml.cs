@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace PhysioCam.Resources.Templates
 {
@@ -46,6 +48,28 @@ namespace PhysioCam.Resources.Templates
         {
             get => (ImageSource) GetValue(ButtonIconProperty);
             set => SetValue(ButtonIconProperty, value);
+        }
+        
+        
+        
+        public static readonly BindableProperty ButtonClickedProperty =
+            BindableProperty.Create(nameof(ButtonClicked), typeof(ICommand), typeof(ButtonControlTemplate));
+
+        public ICommand ButtonClicked
+        {
+            get => (ICommand) GetValue(ButtonClickedProperty);
+            set => SetValue(ButtonClickedProperty, value);
+        }
+        
+        
+        
+        public static readonly BindableProperty ButtonClickedParamProperty =
+            BindableProperty.Create(nameof(ButtonClickedParam), typeof(object), typeof(ButtonControlTemplate));
+
+        public object ButtonClickedParam
+        {
+            get => GetValue(ButtonClickedParamProperty);
+            set => SetValue(ButtonClickedParamProperty, value);
         }
     }
 }
