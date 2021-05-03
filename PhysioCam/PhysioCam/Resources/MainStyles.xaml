@@ -5,7 +5,8 @@
     
     <Style TargetType="NavigationPage">
         <Setter Property="BarBackgroundColor" Value="{DynamicResource MainBackgroundColor}" />
-        <Setter Property="BarTextColor" Value="{DynamicResource MainFontColor}" />
+        <!--<Setter Property="BarTextColor" Value="{DynamicResource MainFontColor}" />-->
+        <Setter Property="BarTextColor" Value="{DynamicResource MainColor}"/>
         <Setter Property="IconColor" Value="{DynamicResource MainFontColor}" />
     </Style>
     
@@ -50,5 +51,12 @@
         <Setter Property="TextColor" Value="{DynamicResource MainFontColor}" />
         <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}" />
     </Style>
-    
+
+    <!--<Style TargetType="ImageButton">
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="HeightRequest" Value="100"/>
+        <Setter Property="WidthRequest" Value="200" />
+        <Setter Property="Aspect" Value="AspectFill"/>
+    </Style>-->
+
 </ResourceDictionary>

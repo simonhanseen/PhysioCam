@@ -2,18 +2,100 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhysioCam.View.HomePage"
-             BackgroundColor="{DynamicResource MainBackgroundColor}"
-             Title="Home">
+             xmlns:local="clr-namespace:PhysioCam.Extensions"
+             BackgroundColor="{DynamicResource MainBackgroundColor}">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Spacing="0">
+            <Image Source="{local:ImageResource PhysioCam.Assets.Icons.physiocamlogo.png}" 
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="Start"/>
+            <Label Text="PhysioCam" 
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="StartAndExpand" 
+                   TextColor="{StaticResource MainColor}" 
+                   FontSize="{DynamicResource BodyTextSize}"></Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
-            <StackLayout Spacing="-250">
-                <Button Text="Patient History"
+            <StackLayout Spacing="25">
+
+            <AbsoluteLayout Margin="10,0,10,0">
+                <ImageButton
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    Source="{local:ImageResource PhysioCam.Images.team-stretching.jpg}"
+                    CornerRadius="10"
+                    HeightRequest="125"
+                    Aspect="AspectFill"/>
+                <Label 
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="0,0.95"
+                    Text="New Training Program"
+                    FontSize="{DynamicResource HeaderTextSize}"
+                    FontFamily="{DynamicResource FontBold}"
+                    TextColor="{StaticResource FilledButtonFontColor}"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Margin="10,0,10,0">
+                <ImageButton
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    Source="{local:ImageResource PhysioCam.Images.patienthistory.jpg}"
+                    CornerRadius="10"
+                    HeightRequest="125"
+                    Aspect="AspectFill"/>
+                <Label 
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="0,0.95"
+                    Text="Patient History"
+                    FontSize="{DynamicResource HeaderTextSize}"
+                    FontFamily="{DynamicResource FontBold}"
+                    TextColor="{StaticResource FilledButtonFontColor}"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Margin="10,0,10,0">
+                <ImageButton
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    Source="{local:ImageResource PhysioCam.Images.patients.jpg}"
+                    CornerRadius="10"
+                    HeightRequest="125"
+                    Aspect="AspectFill"/>
+                <Label 
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="0,0.95"
+                    Text="Patients"
+                    FontSize="{DynamicResource HeaderTextSize}"
+                    FontFamily="{DynamicResource FontBold}"
+                    TextColor="{StaticResource FilledButtonFontColor}"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Margin="10,0,10,0">
+                <ImageButton
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    Source="{local:ImageResource PhysioCam.Images.exercises.jpg}"
+                    CornerRadius="10"
+                    HeightRequest="125"
+                    Aspect="AspectFill"/>
+                <Label 
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="0,0.95"
+                    Text="Exercises"
+                    FontSize="{DynamicResource HeaderTextSize}"
+                    FontFamily="{DynamicResource FontBold}"
+                    TextColor="{StaticResource FilledButtonFontColor}"/>
+            </AbsoluteLayout>
+
+            <!--<Button Text="Patient History"
                         FontSize="Large"
                         VerticalOptions="CenterAndExpand"       
                         HorizontalOptions="Center"
                         HeightRequest="150"
                         WidthRequest="300"
                         CornerRadius="25"
-                        Clicked="PatientHistoryBtnHandler" />
+                        Clicked="PatientHistoryBtnHandler"/>
 
                 <Button Text="New Training Program"
                         FontSize="Large"
@@ -22,7 +104,7 @@
                         HeightRequest="150"
                         WidthRequest="300"
                         CornerRadius="25"
-                        Clicked="NewTrainingProgramBtnHandler"/>
+                        Clicked="NewTrainingProgramBtnHandler"/>-->
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>

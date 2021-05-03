@@ -15,7 +15,7 @@ namespace PhysioCam.View
 
         private async void LoginBtnHandler(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HomePage());
+            App.Current.MainPage = new NavigationPage(new HomePage());
         }
 
         private async void SignUpBtnHandler(object sender, EventArgs e)

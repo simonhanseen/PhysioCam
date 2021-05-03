@@ -11,10 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\physiocamlogo.png" />
+    <None Remove="Images\exercises.jpg" />
+    <None Remove="Images\patienthistory.jpg" />
+    <None Remove="Images\patients.jpg" />
     <None Remove="Images\TestCamera.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Icons\physiocamlogo.png" />
+    <EmbeddedResource Include="Images\exercises.jpg" />
+    <EmbeddedResource Include="Images\patienthistory.jpg" />
+    <EmbeddedResource Include="Images\patients.jpg" />
     <EmbeddedResource Include="Images\TestCamera.png" />
     <EmbeddedResource Include="Images\team-stretching.jpg" />
     <None Remove="Assets\Fonts\OpenSans\OpenSans-Bold.ttf" />
