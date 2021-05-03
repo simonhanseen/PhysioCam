@@ -20,73 +20,74 @@
     <ContentPage.Content>
             <StackLayout Spacing="25">
 
-            <AbsoluteLayout Margin="10,0,10,0">
-                <ImageButton
-                    AbsoluteLayout.LayoutFlags="All"
-                    AbsoluteLayout.LayoutBounds="0,0,1,1"
-                    Source="{local:ImageResource PhysioCam.Images.team-stretching.jpg}"
-                    CornerRadius="10"
-                    HeightRequest="125"
-                    Aspect="AspectFill"/>
-                <Label 
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    AbsoluteLayout.LayoutBounds="0,0.95"
-                    Text="New Training Program"
-                    FontSize="{DynamicResource HeaderTextSize}"
-                    FontFamily="{DynamicResource FontBold}"
-                    TextColor="{StaticResource FilledButtonFontColor}"/>
-            </AbsoluteLayout>
+                <AbsoluteLayout Margin="10,0,10,0">
+                    <ImageButton
+                        AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        Source="{local:ImageResource PhysioCam.Images.team-stretching.jpg}"
+                        CornerRadius="10"
+                        HeightRequest="125"
+                        Aspect="AspectFill"
+                        Clicked="NewTrainingProgramBtnHandler"/>
+                    <Label 
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        AbsoluteLayout.LayoutBounds="0,0.95"
+                        Text="New Training Program"
+                        FontSize="{DynamicResource HeaderTextSize}"
+                        FontFamily="{DynamicResource FontBold}"
+                        TextColor="{StaticResource FilledButtonFontColor}"/>
+                </AbsoluteLayout>
 
-            <AbsoluteLayout Margin="10,0,10,0">
-                <ImageButton
-                    AbsoluteLayout.LayoutFlags="All"
-                    AbsoluteLayout.LayoutBounds="0,0,1,1"
-                    Source="{local:ImageResource PhysioCam.Images.patienthistory.jpg}"
-                    CornerRadius="10"
-                    HeightRequest="125"
-                    Aspect="AspectFill"/>
-                <Label 
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    AbsoluteLayout.LayoutBounds="0,0.95"
-                    Text="Patient History"
-                    FontSize="{DynamicResource HeaderTextSize}"
-                    FontFamily="{DynamicResource FontBold}"
-                    TextColor="{StaticResource FilledButtonFontColor}"/>
-            </AbsoluteLayout>
+                <AbsoluteLayout Margin="10,0,10,0">
+                    <ImageButton
+                        AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        Source="{local:ImageResource PhysioCam.Images.patienthistory.jpg}"
+                        CornerRadius="10"
+                        HeightRequest="125"
+                        Aspect="AspectFill"/>
+                    <Label 
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        AbsoluteLayout.LayoutBounds="0,0.95"
+                        Text="Patient History"
+                        FontSize="{DynamicResource HeaderTextSize}"
+                        FontFamily="{DynamicResource FontBold}"
+                        TextColor="{StaticResource FilledButtonFontColor}"/>
+                </AbsoluteLayout>
 
-            <AbsoluteLayout Margin="10,0,10,0">
-                <ImageButton
-                    AbsoluteLayout.LayoutFlags="All"
-                    AbsoluteLayout.LayoutBounds="0,0,1,1"
-                    Source="{local:ImageResource PhysioCam.Images.patients.jpg}"
-                    CornerRadius="10"
-                    HeightRequest="125"
-                    Aspect="AspectFill"/>
-                <Label 
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    AbsoluteLayout.LayoutBounds="0,0.95"
-                    Text="Patients"
-                    FontSize="{DynamicResource HeaderTextSize}"
-                    FontFamily="{DynamicResource FontBold}"
-                    TextColor="{StaticResource FilledButtonFontColor}"/>
-            </AbsoluteLayout>
+                <AbsoluteLayout Margin="10,0,10,0">
+                    <ImageButton
+                        AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        Source="{local:ImageResource PhysioCam.Images.patients.jpg}"
+                        CornerRadius="10"
+                        HeightRequest="125"
+                        Aspect="AspectFill"/>
+                    <Label 
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        AbsoluteLayout.LayoutBounds="0,0.95"
+                        Text="Patients"
+                        FontSize="{DynamicResource HeaderTextSize}"
+                        FontFamily="{DynamicResource FontBold}"
+                        TextColor="{StaticResource FilledButtonFontColor}"/>
+                </AbsoluteLayout>
 
-            <AbsoluteLayout Margin="10,0,10,0">
-                <ImageButton
-                    AbsoluteLayout.LayoutFlags="All"
-                    AbsoluteLayout.LayoutBounds="0,0,1,1"
-                    Source="{local:ImageResource PhysioCam.Images.exercises.jpg}"
-                    CornerRadius="10"
-                    HeightRequest="125"
-                    Aspect="AspectFill"/>
-                <Label 
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    AbsoluteLayout.LayoutBounds="0,0.95"
-                    Text="Exercises"
-                    FontSize="{DynamicResource HeaderTextSize}"
-                    FontFamily="{DynamicResource FontBold}"
-                    TextColor="{StaticResource FilledButtonFontColor}"/>
-            </AbsoluteLayout>
+                <AbsoluteLayout Margin="10,0,10,0">
+                    <ImageButton
+                        AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        Source="{local:ImageResource PhysioCam.Images.exercises.jpg}"
+                        CornerRadius="10"
+                        HeightRequest="125"
+                        Aspect="AspectFill"/>
+                    <Label 
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        AbsoluteLayout.LayoutBounds="0,0.95"
+                        Text="Exercises"
+                        FontSize="{DynamicResource HeaderTextSize}"
+                        FontFamily="{DynamicResource FontBold}"
+                        TextColor="{StaticResource FilledButtonFontColor}"/>
+                </AbsoluteLayout>
 
             <!--<Button Text="Patient History"
                         FontSize="Large"

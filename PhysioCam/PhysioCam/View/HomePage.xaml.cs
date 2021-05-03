@@ -19,12 +19,22 @@ namespace PhysioCam.View
 
         private void PatientHistoryBtnHandler(object sender, EventArgs e)
         {
-            //Nav Link
+            Navigation.PushAsync(new PatientHistory());
         }
 
         private void NewTrainingProgramBtnHandler(object sender, EventArgs e)
         {
-            //Nav Link
+            Navigation.PushAsync(new ProgramPage());
+        }
+
+        private void PatientsBtnHandler(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PatientPage());
+        }
+
+        private void ExercisesProgramBtnHandler(object sender, EventArgs e)
+        {
+            //Navigation.PushAsync(new StardardExercisesPage());
         }
     }
 }
