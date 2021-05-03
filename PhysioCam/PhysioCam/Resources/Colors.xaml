@@ -3,13 +3,15 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     
-    <Color x:Key="MainColor">ForestGreen</Color>
+    <Color x:Key="MainColor">#B7382D</Color>
     <Color x:Key="MainBackgroundColor">White</Color>
+    
+    <Color x:Key="AccentColor">#A5B0BA</Color>
+    
+    <Color x:Key="MainFontColor">#575757</Color>
+    <Color x:Key="FilledButtonFontColor">White</Color>
+    
     <Color x:Key="SecondaryColor">MediumBlue</Color>
-    
-    <Color x:Key="MainFontColor">Black</Color>
-    <Color x:Key="DimmedFontColor">DimGray</Color>
-    
     <Color x:Key="SuccessColor">LimeGreen</Color>
     <Color x:Key="WarningColor">Yellow</Color>
     <Color x:Key="ErrorColor">Red</Color>

@@ -23,9 +23,17 @@ namespace PhysioCam.View
                 "Item 2",
                 "Item 3",
                 "Item 4",
-                "Item 5"
+                "Item 5",
+                "Item 1",
+                "Item 2",
+                "Item 3",
+                "Item 4"
             };
 
+            NoExercisesText.IsVisible = Items.Count == 0;
+            MyListView.IsVisible = Items.Count > 0;
+            
+            MyListView.HeightRequest = 40 * Items.Count;
             MyListView.ItemsSource = Items;
         }
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)

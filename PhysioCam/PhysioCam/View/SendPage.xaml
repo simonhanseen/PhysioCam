@@ -2,6 +2,8 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PhysioCam.Resources.Templates;assembly=PhysioCam"
+             xmlns:extensions="clr-namespace:PhysioCam.Extensions;assembly=PhysioCam"
              x:Class="PhysioCam.View.SendPage"
              BackgroundColor="{DynamicResource MainBackgroundColor}"
              Title="Send">
@@ -39,6 +41,16 @@
                 <Button Text="Review" BackgroundColor="{DynamicResource SecondaryColor}" />
                 <Button Text="Send" BackgroundColor="{DynamicResource SuccessColor}" />
             </StackLayout>
+            
+            <StackLayout>
+                
+                <local:ButtonControlTemplate
+                    ControlTemplate="{StaticResource ButtonControlTemplate}"
+                    ButtonText="Add a new exercise"
+                    ButtonIcon="{extensions:ImageResource PhysioCam.Assets.Icons.camera.png}" />
+                
+            </StackLayout>
+            
         </StackLayout>
         
     </ContentPage.Content>

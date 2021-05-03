@@ -7,6 +7,9 @@
     <x:Double x:Key="HeaderTextSize">30</x:Double>
     <x:Double x:Key="InputFontSize">12</x:Double>
     
+    <x:String x:Key="FontRegular">OpenSans-Regular</x:String>
+    <x:String x:Key="FontBold">OpenSans-Bold</x:String>
+    
     <Style x:Key="PageHeader" TargetType="Label">
         <Setter Property="FontSize" Value="{DynamicResource HeaderTextSize}" />
         <Setter Property="Padding" Value="40" />
