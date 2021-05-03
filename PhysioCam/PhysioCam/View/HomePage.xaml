@@ -5,7 +5,7 @@
              xmlns:local="clr-namespace:PhysioCam.Extensions"
              BackgroundColor="{DynamicResource MainBackgroundColor}">
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" Spacing="0">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0">
             <Image Source="{local:ImageResource PhysioCam.Assets.Icons.physiocamlogo.png}" 
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="Start"/>
