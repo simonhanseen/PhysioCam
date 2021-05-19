@@ -34,6 +34,7 @@ namespace PhysioCam.View
 
         private void ExercisesProgramBtnHandler(object sender, EventArgs e)
         {
+            DisplayAlert("Not implemented", "This feature is not yet implemented", "OK");
             //Navigation.PushAsync(new StardardExercisesPage());
         }
     }
