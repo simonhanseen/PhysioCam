@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhysioCam.View.ProgramPage"
              xmlns:local="clr-namespace:PhysioCam.Extensions"
+             xmlns:pages="clr-namespace:PhysioCam.View;assembly=PhysioCam"
+             xmlns:vm="clr-namespace:PhysioCam.ViewModels;assembly=PhysioCam"
              xmlns:templates="clr-namespace:PhysioCam.Resources.Templates;assembly=PhysioCam"
              BackgroundColor="{DynamicResource MainBackgroundColor}"
              Title="Program">
@@ -31,6 +33,10 @@
         <!-- </ResourceDictionary> -->
     </ContentPage.Resources>
     
+    <ContentPage.BindingContext>
+        <vm:ProgramPageVm />
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout BackgroundColor="Transparent">
             <Image Source="{local:ImageResource PhysioCam.Images.team-stretching.jpg}"
@@ -40,7 +46,8 @@
             <templates:ButtonControlTemplate
                 ControlTemplate="{StaticResource ButtonControlTemplate}"
                 ButtonText="Add a new exercise"
-                ButtonIcon="{local:ImageResource PhysioCam.Assets.Icons.camera.png}" />
+                ButtonIcon="{local:ImageResource PhysioCam.Assets.Icons.camera.png}"
+                ButtonClicked="{Binding NewExerciseCommand}" />
             
             <Line BackgroundColor="{DynamicResource AccentColor}" HeightRequest="1" />
             
@@ -53,13 +60,22 @@
             <Label Text="Current exercises" FontSize="24" FontFamily="OpenSans-Bold" />
             <!-- <Line BackgroundColor="{DynamicResource AccentColor}" HeightRequest="1" /> -->
             
-            <StackLayout x:Name="NoExercisesText" IsVisible="False" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <StackLayout x:Name="NoExercisesText" IsVisible="{Binding NoItemsInList}" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                 <Image Source="{local:ImageResource PhysioCam.Assets.Icons.photo_library.png}" VerticalOptions="Center" />
                 <Label Text="No exercises" VerticalOptions="Center" FontSize="24" />
             </StackLayout>
                 
             <ListView x:Name="MyListView"
-                      ItemsSource="{Binding Items}" />
+                      ItemsSource="{Binding Exercises}"
+                      ItemTapped="MyListView_OnItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Name}" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
             
             

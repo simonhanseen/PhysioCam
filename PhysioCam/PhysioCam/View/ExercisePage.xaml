@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhysioCam.View.ExercisePage"
              xmlns:local="clr-namespace:PhysioCam.Extensions"
+             xmlns:vm="clr-namespace:PhysioCam.ViewModels;assembly=PhysioCam"
              BackgroundColor="{DynamicResource MainBackgroundColor}"
              Title="New Exercise">
     <ContentPage.ToolbarItems>
@@ -51,7 +52,7 @@
             <StackLayout class="InputField">
                 <Label StyleClass="InputText" Text="Name of the exercise *" />
                 <Frame BorderColor="Black" BackgroundColor="Transparent">
-                    <Entry Placeholder="Exercise 1" Margin="0" IsTextPredictionEnabled="False" />
+                    <Entry Placeholder="Exercise 1" Margin="0" IsTextPredictionEnabled="False" Text="{Binding Name, Mode=TwoWay}" />
                 </Frame>
             </StackLayout>
             
@@ -59,7 +60,7 @@
                 <Label StyleClass="InputText" Text="Description (Optional)" />
                 
                 <Frame BorderColor="Black" BackgroundColor="Transparent" VerticalOptions="FillAndExpand">
-                    <Editor VerticalOptions="FillAndExpand" IsTextPredictionEnabled="False" />
+                    <Editor VerticalOptions="FillAndExpand" IsTextPredictionEnabled="False" Text="{Binding Description, Mode=TwoWay}" />
                 </Frame>
             </StackLayout>
             
@@ -68,7 +69,8 @@
                 <Label x:Name="ExerciseLabelSaveAsStandard" Text="Save as standard exercise" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
                 <CheckBox x:Name="ExerciseSaveAsStandard" Color="Green" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
             </StackLayout>
-            <Button Text="Add to program" x:Name="ExerciseAddToProgram" Style="{DynamicResource ExerciseButton}"></Button>
+            <Button IsVisible="{Binding NewExercise}" Text="Add to program" x:Name="ExerciseAddToProgram" Style="{DynamicResource ExerciseButton}"
+                    Command="{Binding SaveToProgramCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -6,7 +6,6 @@
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             x:Class="PhysioCam.MainPage"
             android:TabbedPage.ToolbarPlacement="Bottom">
-    <local:ExercisePage />
     <local:LoginPage />
     <local:SendPage />
     <local:HomePage />
