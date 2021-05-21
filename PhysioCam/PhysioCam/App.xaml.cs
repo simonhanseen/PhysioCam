@@ -11,7 +11,8 @@ namespace PhysioCam
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            //MainPage = new NavigationPage(new MainPage());
+            MainPage = new ExercisePage(new ViewModels.ExerciseVm(null));
         }
 
         protected override void OnStart()

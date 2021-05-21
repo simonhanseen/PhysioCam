@@ -4,6 +4,7 @@
              x:Class="PhysioCam.View.ExercisePage"
              xmlns:local="clr-namespace:PhysioCam.Extensions"
              xmlns:vm="clr-namespace:PhysioCam.ViewModels;assembly=PhysioCam"
+             xmlns:templates="clr-namespace:PhysioCam.Resources.Templates;assembly=PhysioCam"
              BackgroundColor="{DynamicResource MainBackgroundColor}"
              Title="New Exercise">
     <ContentPage.ToolbarItems>
@@ -32,7 +33,7 @@
     
     <ContentPage.Content>
         <StackLayout Padding="15" Orientation="Vertical">
-            <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+            <!--<StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
                 <Frame x:Name="ExerciseFrameFirstImage" Style="{DynamicResource CameraFrame}" HorizontalOptions="FillAndExpand">
                     <ImageButton x:Name="ExerciseFirstImage" Style="{DynamicResource CameraImageButton}" Clicked="ImageButton_Clicked"/>
                 </Frame>
@@ -42,14 +43,42 @@
                 <Frame x:Name="ExerciseFrameThirdImage" Style="{DynamicResource CameraFrame}" HorizontalOptions="FillAndExpand">
                     <ImageButton x:Name="ExerciseThirdImage" Style="{DynamicResource CameraImageButton}" Clicked="ImageButton_Clicked"/>
                 </Frame>
-            </StackLayout>
-            <FlexLayout BackgroundColor="Transparent" JustifyContent="SpaceEvenly">
+            </StackLayout>-->
+            
+            <CarouselView x:Name="ImagesView" ItemsSource="{Binding PhotoPaths}" HeightRequest="500">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <SwipeView>
+                                <SwipeView.TopItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Delete"
+                                               IconImageSource="{local:ImageResource PhysioCam.Assets.Icons.delete.png}"
+                                               BackgroundColor="LightPink"/>
+                                    </SwipeItems>
+                                </SwipeView.TopItems>
+                                    <StackLayout>
+                                        <Image Source="{Binding Path}"
+                                         Aspect="AspectFit"/>
+                                    </StackLayout>
+                            </SwipeView>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            
+            <templates:ButtonControlTemplate
+                ControlTemplate="{StaticResource ButtonControlTemplate}"
+                ButtonText="Add picture"
+                ButtonIcon="{local:ImageResource PhysioCam.Assets.Icons.camera.png}"
+                ButtonClicked="{Binding AddPictureCommand}"/>
+            <!--<FlexLayout BackgroundColor="Transparent" JustifyContent="SpaceEvenly">
                 <Button Text="Add from gallery" x:Name="ExerciseAddFromGallery1" Style="{DynamicResource ExerciseButton}" HorizontalOptions="FillAndExpand" Clicked="GalleryButton1_Clicked"></Button>
                 <Button Text="Add from gallery" x:Name="ExerciseAddFromGallery2" Style="{DynamicResource ExerciseButton}" HorizontalOptions="FillAndExpand" Clicked="GalleryButton2_Clicked"></Button>
                 <Button Text="Add from gallery" x:Name="ExerciseAddFromGallery3" Style="{DynamicResource ExerciseButton}" HorizontalOptions="FillAndExpand" Clicked="GalleryButton3_Clicked"></Button>
-            </FlexLayout>
+            </FlexLayout>-->
             
-            <StackLayout class="InputField">
+            <!--<StackLayout class="InputField">
                 <Label StyleClass="InputText" Text="Name of the exercise *" />
                 <Frame BorderColor="Black" BackgroundColor="Transparent">
                     <Entry Placeholder="Exercise 1" Margin="0" IsTextPredictionEnabled="False" Text="{Binding Name, Mode=TwoWay}" />
@@ -64,13 +93,13 @@
                 </Frame>
             </StackLayout>
             
-            <!--<Button Text="Save as standard exercise" x:Name="ExerciseSaveAsStandard" Style="{DynamicResource ExerciseButton}" ContentLayout="right, 5" ImageSource="{local:ImageResource PhysioCam.Images.TestCamera.png}" BackgroundColor="Transparent"/>-->
+            --><!--<Button Text="Save as standard exercise" x:Name="ExerciseSaveAsStandard" Style="{DynamicResource ExerciseButton}" ContentLayout="right, 5" ImageSource="{local:ImageResource PhysioCam.Images.TestCamera.png}" BackgroundColor="Transparent"/>--><!--
             <StackLayout Orientation="Horizontal">
                 <Label x:Name="ExerciseLabelSaveAsStandard" Text="Save as standard exercise" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
                 <CheckBox x:Name="ExerciseSaveAsStandard" Color="Green" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
             </StackLayout>
             <Button IsVisible="{Binding NewExercise}" Text="Add to program" x:Name="ExerciseAddToProgram" Style="{DynamicResource ExerciseButton}"
-                    Command="{Binding SaveToProgramCommand}"/>
+                    Command="{Binding SaveToProgramCommand}"/>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
