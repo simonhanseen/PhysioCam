@@ -2,20 +2,89 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhysioCam.View.PatientPage"
-             Title="Patient Page">
-            
-    <ContentPage.Content>
-        <StackLayout Margin="20">
-            <Label Text="Choose Patient" HorizontalOptions="Center" FontSize="Large"/>
-            <SearchBar Placeholder="Search Programs..." />
-            <Label Text="All Patients" HorizontalOptions="Center" />
-            <Button Text="Patient 1" />
-            <Button Text="Patient 1" />
-            <Button Text="Patient 1" />
-            <Button Text="Patient 1" />
-            <Button Text="Patient 1" />
-            <Button Text="Patient 1" />
-        </StackLayout>
+             Title="Patient Page"
+             xmlns:local="clr-namespace:PhysioCam.Extensions"
+             BackgroundColor="{DynamicResource MainBackgroundColor}">
 
-    </ContentPage.Content>
+
+    <Grid VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image BackgroundColor="#a5b0ba" Aspect="Fill" HeightRequest="300" VerticalOptions="StartAndExpand"/>
+        <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="20,50">
+            <Label Text="Patient Page" FontSize="16" VerticalOptions="Center" TextColor="White"/>
+        </StackLayout>
+        <StackLayout Orientation="Vertical" Margin="0,20" HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Welcome" TextColor="White" FontSize="70" VerticalOptions="Center"/>
+            </StackLayout>
+            <Label Text="Recently added:" TextColor="White" FontSize="16" HorizontalOptions="Center"/>
+            <Label Text="Mysha Bauer, female" TextColor="White" FontSize="12" HorizontalOptions="Center"/>
+        </StackLayout>
+        <Frame Grid.Row="1" HasShadow="True" CornerRadius="10" Margin="20,-60,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                    <Image Source="{local:ImageResource PhysioCam.Images.TestCamera.png}" HeightRequest="25" HorizontalOptions="Center"/>
+                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                        <Label Text="36" TextColor="Black" FontSize="14" HorizontalOptions="Center"/>
+                        <Label Text="Total" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                    <Image Source="{local:ImageResource PhysioCam.Images.TestCamera.png}" HeightRequest="25" HorizontalOptions="Center"/>
+                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                        <Label Text="24" TextColor="Black" FontSize="14" HorizontalOptions="Center"/>
+                        <Label Text="Men" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                    <Image Source="{local:ImageResource PhysioCam.Images.TestCamera.png}" HeightRequest="25" HorizontalOptions="Center"/>
+                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                        <Label Text="12" TextColor="Black" FontSize="14" HorizontalOptions="Center"/>
+                        <Label Text="Women" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                    <Image Source="{local:ImageResource PhysioCam.Images.TestCamera.png}" HeightRequest="25" HorizontalOptions="Center"/>
+                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                        <Label Text="3" TextColor="Black" FontSize="14" HorizontalOptions="Center"/>
+                        <Label Text="Pending" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Frame>
+        <ListView ItemsSource="{Binding Patients}" SeparatorVisibility="None"
+                  Grid.Row="3" Margin="20,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <ViewCell>
+                        <Frame BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                            <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                                <Label Grid.Column="1" Text="Program" HeightRequest="38" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                                    <Label Text="{Binding Program}" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
 </ContentPage>
