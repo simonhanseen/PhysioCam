@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PhysioCam.View;
 using Xamarin.Forms;
 
 namespace PhysioCam
