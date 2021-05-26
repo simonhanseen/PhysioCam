@@ -34,28 +34,28 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                    <Image Source="{local:ImageResource PhysioCam.Images.TestCamera.png}" HeightRequest="25" HorizontalOptions="Center"/>
+                    <Image Source="{local:ImageResource PhysioCam.Images.total.png}" HeightRequest="25" HorizontalOptions="Center"/>
                     <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
                         <Label Text="36" TextColor="Black" FontSize="14" HorizontalOptions="Center"/>
                         <Label Text="Total" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                    <Image Source="{local:ImageResource PhysioCam.Images.TestCamera.png}" HeightRequest="25" HorizontalOptions="Center"/>
+                    <Image Source="{local:ImageResource PhysioCam.Images.men.png}" HeightRequest="25" HorizontalOptions="Center"/>
                     <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
                         <Label Text="24" TextColor="Black" FontSize="14" HorizontalOptions="Center"/>
                         <Label Text="Men" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                    <Image Source="{local:ImageResource PhysioCam.Images.TestCamera.png}" HeightRequest="25" HorizontalOptions="Center"/>
+                    <Image Source="{local:ImageResource PhysioCam.Images.woman.png}" HeightRequest="25" HorizontalOptions="Center"/>
                     <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
                         <Label Text="12" TextColor="Black" FontSize="14" HorizontalOptions="Center"/>
                         <Label Text="Women" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                    <Image Source="{local:ImageResource PhysioCam.Images.TestCamera.png}" HeightRequest="25" HorizontalOptions="Center"/>
+                    <Image Source="{local:ImageResource PhysioCam.Images.pending.png}" HeightRequest="25" HorizontalOptions="Center"/>
                     <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
                         <Label Text="3" TextColor="Black" FontSize="14" HorizontalOptions="Center"/>
                         <Label Text="Pending" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>

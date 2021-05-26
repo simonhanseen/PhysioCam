@@ -14,17 +14,23 @@
     <None Remove="Assets\Icons\delete.png" />
     <None Remove="Assets\Icons\physiocamlogo.png" />
     <None Remove="Images\exercises.jpg" />
+    <None Remove="Images\men.png" />
     <None Remove="Images\patienthistory.jpg" />
     <None Remove="Images\patients.jpg" />
+    <None Remove="Images\pending.png" />
     <None Remove="Images\TestCamera.png" />
+    <None Remove="Images\total.png" />
+    <None Remove="Images\woman.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\Icons\delete.png" />
     <EmbeddedResource Include="Assets\Icons\physiocamlogo.png" />
     <EmbeddedResource Include="Images\exercises.jpg" />
+    <EmbeddedResource Include="Images\men.png" />
     <EmbeddedResource Include="Images\patienthistory.jpg" />
     <EmbeddedResource Include="Images\patients.jpg" />
+    <EmbeddedResource Include="Images\pending.png" />
     <EmbeddedResource Include="Images\TestCamera.png" />
     <EmbeddedResource Include="Images\team-stretching.jpg" />
     <None Remove="Assets\Fonts\OpenSans\OpenSans-Bold.ttf" />
@@ -39,6 +45,8 @@
     <EmbeddedResource Include="Assets\Icons\camera.png" />
     <None Remove="Assets\Icons\list_gray.png" />
     <EmbeddedResource Include="Assets\Icons\list.png" />
+    <EmbeddedResource Include="Images\total.png" />
+    <EmbeddedResource Include="Images\woman.png" />
     <None Remove="Assets\Icons\photo_library_big.png" />
   </ItemGroup>
 

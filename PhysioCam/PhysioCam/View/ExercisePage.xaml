@@ -56,7 +56,7 @@
                                     <SwipeItems>
                                         <SwipeItem Text="Delete"
                                                IconImageSource="{local:ImageResource PhysioCam.Assets.Icons.delete.png}"
-                                               BackgroundColor="#B7382D"
+                                               BackgroundColor="LightPink"
                                                Clicked="SwipeItem_Clicked"/>
                                     </SwipeItems>
                                 </SwipeView.TopItems>
