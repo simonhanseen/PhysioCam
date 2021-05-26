@@ -17,14 +17,29 @@ namespace PhysioCam.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExercisePage
     {
-        string PhotoPath;
+        //string PhotoPath;
         private ExerciseVm _exerciseVm;
 
         public ExercisePage(ExerciseVm exerciseVm)
         {
             InitializeComponent();
 
-            BindingContext = exerciseVm;
+            _exerciseVm = exerciseVm;
+            BindingContext = _exerciseVm;
+        }
+
+        private void SwipeItem_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                SwipeItem swipeitem = (SwipeItem)sender;
+                Models.Image image = (Models.Image)swipeitem.BindingContext;
+                _exerciseVm.PhotoPaths.Remove(image);
+            }
+            catch(Exception ex)
+            {
+                DisplayAlert("Error when removing image", $"Error: {ex}", "OK");
+            }
         }
 
         //private async void ImageButton_Clicked(object sender, EventArgs e)
@@ -68,7 +83,7 @@ namespace PhysioCam.View
         //            await DisplayAlert("Error", $"Error when adding photo to exercise: {ex.Message.ToString()}", "OK");
         //        }
         //    }
-            
+
         //}
 
         //async Task LoadPhotoAsync(FileResult photo)

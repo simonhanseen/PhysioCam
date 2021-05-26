@@ -45,7 +45,8 @@
                         Source="{local:ImageResource PhysioCam.Images.patienthistory.jpg}"
                         CornerRadius="10"
                         HeightRequest="125"
-                        Aspect="AspectFill"/>
+                        Aspect="AspectFill"
+                        Clicked="PatientHistoryBtnHandler"/>
                     <Label 
                         AbsoluteLayout.LayoutFlags="PositionProportional"
                         AbsoluteLayout.LayoutBounds="0,0.95"
@@ -62,7 +63,8 @@
                         Source="{local:ImageResource PhysioCam.Images.patients.jpg}"
                         CornerRadius="10"
                         HeightRequest="125"
-                        Aspect="AspectFill"/>
+                        Aspect="AspectFill"
+                        Clicked="PatientsBtnHandler"/>
                     <Label 
                         AbsoluteLayout.LayoutFlags="PositionProportional"
                         AbsoluteLayout.LayoutBounds="0,0.95"
@@ -79,7 +81,8 @@
                         Source="{local:ImageResource PhysioCam.Images.exercises.jpg}"
                         CornerRadius="10"
                         HeightRequest="125"
-                        Aspect="AspectFill"/>
+                        Aspect="AspectFill"
+                        Clicked="ExercisesProgramBtnHandler"/>
                     <Label 
                         AbsoluteLayout.LayoutFlags="PositionProportional"
                         AbsoluteLayout.LayoutBounds="0,0.95"
