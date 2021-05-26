@@ -70,7 +70,7 @@
                 </CarouselView.ItemTemplate>
             </CarouselView>
 
-            <Button Text="Add Picutre"
+            <Button Text="Add Picture"
                     Style="{DynamicResource Buttons}"
                     ImageSource="{local:ImageResource PhysioCam.Assets.Icons.add_photo.png}"
                     Command="{Binding AddPictureCommand}"/> 
