@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PhysioCam.Interfaces;
+using PhysioCam.Models;
+using PhysioCam.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,7 +25,7 @@ namespace PhysioCam.View
         }
 
         private void NewTrainingProgramBtnHandler(object sender, EventArgs e)
-        {
+        { 
             Navigation.PushAsync(new ProgramPage());
         }
 

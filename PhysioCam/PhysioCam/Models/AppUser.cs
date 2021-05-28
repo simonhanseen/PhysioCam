@@ -1,15 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace PhysioCam.Models
 {
-    public class Exercise
+    public class AppUser
     {
         [JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
-        public string Description { get; set; }
-        public string Title { get; set; }
+        
+        public string Name { get; set; }
+        
+        [JsonProperty(PropertyName = "email")]
+        public string Email { get; set; }
+        
+        public string DateOfBirth { get; set; }
         
         [JsonProperty(PropertyName = "published_at")]
         public DateTime PublishedAt { get; set; }
@@ -20,12 +24,5 @@ namespace PhysioCam.Models
         [JsonProperty(PropertyName = "updated_at")]
         public DateTime UpdatedAt { get; set; }
         
-        public List<Image> Image { get; set; }
-        
-        [JsonProperty(PropertyName = "app_users")]
-        public List<AppUser> AppUsers { get; set; }
-        
-        [JsonProperty(PropertyName = "exercise_plans")]
-        public List<ExercisePlan> ExercisePlans { get; set; }
     }
 }

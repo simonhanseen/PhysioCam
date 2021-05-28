@@ -9,20 +9,28 @@ namespace PhysioCam.ViewModels
 {
     public class ProgramPageVm : PhysioCamVm
     {
-        public Program Program { get; set; }
-
         public ProgramPageVm()
         {
-            NewExerciseCommand = new Command(() =>
-            {
-                var ex = new ExerciseVm(null);
-                ex.Attach(AddExercise);
-                var page = new ExercisePage(ex);
-                NavigateCommand.Execute(page);
-            });
+            
+        }
+        
+        public ProgramPageVm(IEnumerable<Exercise> exercises = null)
+        {
+            if (exercises == null) return;
+            Exercises = (ObservableCollection<Exercise>) exercises;
+            NoItemsInList = Exercises.Count == 0;
+
+            // NewExerciseCommand = new Command(() =>
+            // {
+            //     var ex = new ExerciseVm(null);
+            //     ex.Attach(AddExercise);
+            //     var page = new ExercisePage(ex);
+            //     NavigateCommand.Execute(page);
+            // });
         }
 
-        public ObservableCollection<Exercise> Exercises { get; set; } = new ObservableCollection<Exercise>();
+        // public ObservableCollection<ExerciseOld> Exercises { get; set; } = new ObservableCollection<ExerciseOld>();
+        public ObservableCollection<Exercise> Exercises { get; set; }
 
         public void AddExercise(Exercise exercise)
         {

@@ -86,7 +86,7 @@
                     <Label 
                         AbsoluteLayout.LayoutFlags="PositionProportional"
                         AbsoluteLayout.LayoutBounds="0,0.95"
-                        Text="Exercises"
+                        Text="Exercise"
                         FontSize="{DynamicResource HeaderTextSize}"
                         FontFamily="{DynamicResource FontBold}"
                         TextColor="{StaticResource FilledButtonFontColor}"/>

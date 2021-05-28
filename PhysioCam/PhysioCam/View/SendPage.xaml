@@ -46,7 +46,7 @@
                 
                 <local:ButtonControlTemplate
                     ControlTemplate="{StaticResource ButtonControlTemplate}"
-                    ButtonText="Add a new exercise"
+                    ButtonText="Add a new exerciseOld"
                     ButtonIcon="{extensions:ImageResource PhysioCam.Assets.Icons.camera.png}" />
                 
             </StackLayout>

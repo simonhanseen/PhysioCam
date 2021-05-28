@@ -12,7 +12,7 @@ namespace PhysioCam.ViewModels
 {
     public class ExerciseVm : PhysioCamVm
     {
-        public delegate void AddExercise(Exercise exercise);
+        public delegate void AddExercise(ExerciseOld exerciseOld);
 
         private AddExercise _addExercise;
 
@@ -21,23 +21,23 @@ namespace PhysioCam.ViewModels
             _addExercise += ex;
         }
         
-        public ExerciseVm(Exercise exercise)
+        public ExerciseVm(ExerciseOld exerciseOld)
         {
             PhotoPaths = new ObservableCollection<Models.Image>();
 
-            if (exercise == null)
+            if (exerciseOld == null)
             {
-                _exercise = new Exercise();
+                _exerciseOld = new ExerciseOld();
                 NewExercise = true;
             }
             else
             {
-                _exercise = exercise;
+                _exerciseOld = exerciseOld;
             }
 
             SaveToProgramCommand = new Command(async() =>
             {
-                _addExercise(_exercise);
+                _addExercise(_exerciseOld);
                 await Application.Current.MainPage.Navigation.PopAsync();
             });
 
@@ -47,30 +47,30 @@ namespace PhysioCam.ViewModels
                 if(addPicture == "Camera")
                 {
                     var path = await TakePicture();
-                    PhotoPaths.Add(new Models.Image() { Path = path });
+                    PhotoPaths.Add(new Models.Image() { url = path });
                 }
                 if(addPicture == "Gallery")
                 {
                     var path = await PickFromGallery();
-                    PhotoPaths.Add(new Models.Image() { Path = path });
+                    PhotoPaths.Add(new Models.Image() { url = path });
                 }
             });
         }
 
-        private Exercise _exercise;
+        private ExerciseOld _exerciseOld;
 
         public bool NewExercise { get; }
 
         public string Name
         {
-            get => _exercise.Name;
-            set => _exercise.Name = value;
+            get => _exerciseOld.Name;
+            set => _exerciseOld.Name = value;
         }
 
         public string Description
         {
-            get => _exercise.Description;
-            set => _exercise.Description = value;
+            get => _exerciseOld.Description;
+            set => _exerciseOld.Description = value;
         }
 
         private string _AddPicutre;
@@ -83,8 +83,6 @@ namespace PhysioCam.ViewModels
 
 
         public bool StandardExercise { get; set; }
-
-        public ICollection<string> Images { get; set; }
 
         public ICommand SaveToProgramCommand { get; set; }
 
@@ -110,7 +108,7 @@ namespace PhysioCam.ViewModels
             }
             catch(Exception ex)
             {
-                await App.Current.MainPage.DisplayAlert("Error", $"Error when adding photo to exercise: {ex.Message.ToString()}", "OK");
+                await App.Current.MainPage.DisplayAlert("Error", $"Error when adding photo to exerciseOld: {ex.Message.ToString()}", "OK");
                 return null;
             }
         }
@@ -126,7 +124,7 @@ namespace PhysioCam.ViewModels
             }
             catch (Exception ex)
             {
-                await App.Current.MainPage.DisplayAlert("Error", $"Error when adding photo to exercise: {ex.Message.ToString()}", "OK");
+                await App.Current.MainPage.DisplayAlert("Error", $"Error when adding photo to exerciseOld: {ex.Message.ToString()}", "OK");
                 return null;
             }
         }

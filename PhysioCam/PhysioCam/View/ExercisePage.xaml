@@ -6,7 +6,7 @@
              xmlns:vm="clr-namespace:PhysioCam.ViewModels;assembly=PhysioCam"
              xmlns:templates="clr-namespace:PhysioCam.Resources.Templates;assembly=PhysioCam"
              BackgroundColor="{DynamicResource MainBackgroundColor}"
-             Title="New Exercise">
+             Title="New ExerciseOld">
     <ContentPage.ToolbarItems>
         
     </ContentPage.ToolbarItems>
@@ -47,7 +47,7 @@
                 </Frame>
             </StackLayout>-->
             
-            <CarouselView x:Name="ImagesView" ItemsSource="{Binding PhotoPaths}" HeightRequest="150" EmptyView="No pictures added to Exercise">
+            <CarouselView x:Name="ImagesView" ItemsSource="{Binding PhotoPaths}" HeightRequest="150" EmptyView="No pictures added to ExerciseOld">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
@@ -91,8 +91,8 @@
             <Frame BorderColor="#B7382D" CornerRadius="10" HeightRequest="250">
                 <StackLayout Orientation="Vertical">
                     <StackLayout class="InputField">
-                        <Label StyleClass="InputText" Text="Name of the exercise *" />
-                        <Entry Placeholder="Exercise 1" Margin="0" IsTextPredictionEnabled="False" Text="{Binding Name, Mode=TwoWay}" />
+                        <Label StyleClass="InputText" Text="Name of the exerciseOld *" />
+                        <Entry Placeholder="ExerciseOld 1" Margin="0" IsTextPredictionEnabled="False" Text="{Binding Name, Mode=TwoWay}" />
                     </StackLayout>
 
                     <BoxView Color="#B7382D" Margin="4,-40,0,0"
@@ -109,7 +109,7 @@
                                  HeightRequest="2"/>
 
                     <StackLayout Orientation="Horizontal">
-                        <Label x:Name="ExerciseLabelSaveAsStandard" Text="Save as standard exercise" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                        <Label x:Name="ExerciseLabelSaveAsStandard" Text="Save as standard exerciseOld" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
                         <CheckBox x:Name="ExerciseSaveAsStandard" Color="#B7382D" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
                     </StackLayout>
                 </StackLayout>
