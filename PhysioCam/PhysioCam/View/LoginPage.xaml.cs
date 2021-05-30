@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using PhysioCam.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +16,9 @@ namespace PhysioCam.View
 
         private async void LoginBtnHandler(object sender, EventArgs e)
         {
+            var userService = DependencyService.Get<IUserService>();
+            await userService.Login("Marianne");
+            
             App.Current.MainPage = new NavigationPage(new HomePage());
         }
 

@@ -7,6 +7,6 @@ namespace PhysioCam.Interfaces
 {
     public interface IExerciseService
     {
-        Task<IEnumerable<Exercise>> GetExercises();
+        IEnumerable<Exercise> GetExercises();
     }
 }

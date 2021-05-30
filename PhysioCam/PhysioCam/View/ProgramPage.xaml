@@ -45,7 +45,7 @@
             
             <templates:ButtonControlTemplate
                 ControlTemplate="{StaticResource ButtonControlTemplate}"
-                ButtonText="Add a new exerciseOld"
+                ButtonText="Add a new Exercise"
                 ButtonIcon="{local:ImageResource PhysioCam.Assets.Icons.camera.png}"
                 ButtonClicked="{Binding NewExerciseCommand}" />
             

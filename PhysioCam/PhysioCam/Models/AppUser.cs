@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace PhysioCam.Models
@@ -24,5 +25,8 @@ namespace PhysioCam.Models
         [JsonProperty(PropertyName = "updated_at")]
         public DateTime UpdatedAt { get; set; }
         
+        [JsonProperty(PropertyName = "exercises")]
+        public List<Exercise> Exercises { get; set; }
+
     }
 }

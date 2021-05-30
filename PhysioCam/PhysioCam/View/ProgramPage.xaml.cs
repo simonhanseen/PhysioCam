@@ -24,7 +24,7 @@ namespace PhysioCam.View
         protected override async void OnAppearing()
         {
             var service = DependencyService.Get<IExerciseService>();
-            var exercises = await service.GetExercises();
+            var exercises = service.GetExercises();
             BindingContext = new ProgramPageVm(new ObservableCollection<Exercise>(exercises));
         }
 
@@ -33,7 +33,7 @@ namespace PhysioCam.View
             if (e.Item == null)
                 return;
             
-            var ex = (ExerciseOld)((ListView)sender).SelectedItem;
+            var ex = (Exercise)((ListView)sender).SelectedItem;
             Navigation.PushAsync(new ExercisePage(new ExerciseVm(ex)));
             ((ListView)sender).SelectedItem = null;
         }
