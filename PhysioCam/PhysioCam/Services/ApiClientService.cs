@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -60,6 +61,15 @@ namespace PhysioCam.Services
         public async Task<string> GetStringAsync(string subUrl)
         {
             return await Client.GetStringAsync(Url + subUrl);
+        }
+
+        public async Task<string> PostJsonAsync(string subUrl, string json)
+        {
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var result = await Client.PostAsync(Url + subUrl, content);
+            result.EnsureSuccessStatusCode();
+
+            return await result.Content.ReadAsStringAsync();
         }
     }
 }

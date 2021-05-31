@@ -10,24 +10,12 @@ namespace PhysioCam.Models
         {
             Exercises = new List<Exercise>();
         }
-        
-        [JsonProperty(PropertyName = "id")]
-        public int Id { get; set; }
-        
+
         public string Title { get; set; }
         
         public string Description { get; set; }
-        
-        [JsonProperty(PropertyName = "published_at")]
-        public DateTime PublishedAt { get; set; }
-        
-        [JsonProperty(PropertyName = "created_at")]
-        public DateTime CreatedAt { get; set; }
-        
-        [JsonProperty(PropertyName = "updated_at")]
-        public DateTime UpdatedAt { get; set; }
 
-        [JsonProperty(PropertyName = "exercises")]
-        public List<Exercise> Exercises { get; set; }
+        [JsonProperty(PropertyName = "exercises"), JsonIgnore]
+        public ICollection<Exercise> Exercises { get; set; }
     }
 }

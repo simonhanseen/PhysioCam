@@ -81,8 +81,13 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
             
+            <Line BackgroundColor="{DynamicResource AccentColor}" HeightRequest="1" />
+            
+            <templates:ButtonControlTemplate
+                ControlTemplate="{StaticResource ButtonControlTemplate}"
+                ButtonText="Save Plan"
+                ButtonClicked="{Binding SavePlanCommand}" />
             
             <!-- <StackLayout Orientation="Vertical"> -->
             <!--     <StackLayout Orientation="Horizontal" BackgroundColor="Transparent"> -->

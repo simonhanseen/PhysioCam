@@ -12,7 +12,7 @@ namespace PhysioCam.Services
     {
         private readonly IApiClientService _clientService;
 
-        public AppUser User { get; private set; }
+        public AppUser CurrentUser { get; private set; }
 
         public UserService()
         {
@@ -24,9 +24,9 @@ namespace PhysioCam.Services
             var strResult = await _clientService.GetStringAsync("app-users");
             
             var users = JsonConvert.DeserializeObject<IEnumerable<AppUser>>(strResult);
-            User = users.FirstOrDefault(u => u.Name == username);
+            CurrentUser = users.FirstOrDefault(u => u.Name == username);
 
-            return User;
+            return CurrentUser;
         }
     }
 }

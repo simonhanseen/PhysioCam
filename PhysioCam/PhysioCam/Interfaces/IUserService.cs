@@ -5,7 +5,7 @@ namespace PhysioCam.Interfaces
 {
     public interface IUserService
     {
-        AppUser User { get; }
+        AppUser CurrentUser { get; }
         Task<AppUser> Login(string username);
     }
 }

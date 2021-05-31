@@ -8,5 +8,6 @@ namespace PhysioCam.Interfaces
         string Url { get; }
         HttpClient Client { get; }
         Task<string> GetStringAsync(string subUrl);
+        Task<string> PostJsonAsync(string subUrl, string json);
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using PhysioCam.Interfaces;
 using PhysioCam.Models;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -35,6 +36,9 @@ namespace PhysioCam.ViewModels
             PhotoPaths = new ObservableCollection<Models.Image>();
 
             _exercise = exercise;
+            
+            var userService = DependencyService.Get<IUserService>();
+            _exercise.AppUsers.Add(userService.CurrentUser);
 
             SaveToProgramCommand = new Command(async() =>
             {

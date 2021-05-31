@@ -12,9 +12,7 @@ namespace PhysioCam.ViewModels
     public class ExercisePlanVm : PhysioCamVm
     {
         private ExercisePlan _exercisePlan;
-        
-        public int Id => _exercisePlan.Id;
-        
+
         public string Title
         {
             get => _exercisePlan.Title;
@@ -48,16 +46,23 @@ namespace PhysioCam.ViewModels
                 
                 NavigateCommand.Execute(page);
             });
+
+            SavePlanCommand = new Command(async () =>
+            {
+                NavigateCommand.Execute(new SendPage(_exercisePlan));
+            });
         }
         
         public void AddExercise(Exercise exercise)
         {
             Exercises.Add(exercise);
+            _exercisePlan.Exercises.Add(exercise);
             ItemsInList = Exercises.Count > 0;
             OnPropertyChanged(nameof(Exercises));
         }
 
         public ICommand NewExerciseCommand { get; protected set; }
+        public ICommand SavePlanCommand { get; protected set; }
 
         private bool _itemsInList;
         public bool ItemsInList
