@@ -20,20 +20,21 @@ namespace PhysioCam.ViewModels
         {
             _addExercise += ex;
         }
+
+        private bool NewExercise { get; }
+
+        public string DoneButtonText => NewExercise ? "Add to program" : "Update Exercise";
+
+        public ExerciseVm() : this(new Exercise())
+        {
+            NewExercise = true;
+        }
         
         public ExerciseVm(Exercise exercise)
         {
             PhotoPaths = new ObservableCollection<Models.Image>();
 
-            if (exercise == null)
-            {
-                _exercise = new Exercise();
-                NewExercise = true;
-            }
-            else
-            {
-                _exercise = exercise;
-            }
+            _exercise = exercise;
 
             SaveToProgramCommand = new Command(async() =>
             {
@@ -64,8 +65,6 @@ namespace PhysioCam.ViewModels
 
         private Exercise _exercise;
 
-        public bool NewExercise { get; }
-
         public string Title
         {
             get => _exercise.Title;
@@ -82,8 +81,8 @@ namespace PhysioCam.ViewModels
 
         public string AddPicture
         {
-            get { return _AddPicutre; }
-            set { _AddPicutre = value; OnPropertyChanged("AddPicture"); }
+            get => _AddPicutre;
+            set { _AddPicutre = value; }
         }
 
 
@@ -97,7 +96,7 @@ namespace PhysioCam.ViewModels
 
         public ObservableCollection<Models.Image> PhotoPaths
         {
-            get { return _photoPaths; }
+            get => _photoPaths;
             set { _photoPaths = value; OnPropertyChanged("PhotoPaths"); }
         }
 

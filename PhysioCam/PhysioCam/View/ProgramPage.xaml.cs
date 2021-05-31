@@ -16,16 +16,14 @@ namespace PhysioCam.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProgramPage : ContentPage
     {
-        public ProgramPage()
+        public ProgramPage() : this(new ExercisePlanVm())
+        {
+        }
+
+        public ProgramPage(ExercisePlanVm exercisePlanVm)
         {
             InitializeComponent();
-        }
-        
-        protected override async void OnAppearing()
-        {
-            var service = DependencyService.Get<IExerciseService>();
-            var exercises = service.GetExercises();
-            BindingContext = new ProgramPageVm(new ObservableCollection<Exercise>(exercises));
+            BindingContext = exercisePlanVm;
         }
 
         private void MyListView_OnItemTapped(object sender, ItemTappedEventArgs e)

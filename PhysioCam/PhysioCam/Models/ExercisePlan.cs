@@ -6,6 +6,11 @@ namespace PhysioCam.Models
 {
     public class ExercisePlan
     {
+        public ExercisePlan()
+        {
+            Exercises = new List<Exercise>();
+        }
+        
         [JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
         
@@ -21,7 +26,7 @@ namespace PhysioCam.Models
         
         [JsonProperty(PropertyName = "updated_at")]
         public DateTime UpdatedAt { get; set; }
-        
+
         [JsonProperty(PropertyName = "exercises")]
         public List<Exercise> Exercises { get; set; }
     }

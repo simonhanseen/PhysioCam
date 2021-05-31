@@ -33,6 +33,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     
+    <ContentPage.BindingContext>
+        <vm:ExerciseVm />
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout Padding="15" Orientation="Vertical">
             <!--<StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
@@ -114,11 +118,11 @@
                     </StackLayout>
                 </StackLayout>
             </Frame>
-            <Button IsVisible="{Binding NewExercise}" 
-                    Text="Add to program" 
-                    x:Name="ExerciseAddToProgram" 
+            
+            <Button Text="{Binding DoneButtonText}"
                     Style="{DynamicResource Buttons}"
                     Command="{Binding SaveToProgramCommand}"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

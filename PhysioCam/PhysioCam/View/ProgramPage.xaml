@@ -34,7 +34,7 @@
     </ContentPage.Resources>
     
     <ContentPage.BindingContext>
-        <vm:ProgramPageVm />
+        <vm:ExercisePlanVm />
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
@@ -57,21 +57,26 @@
                 ButtonIcon="{local:ImageResource PhysioCam.Assets.Icons.list.png}" />
             
             <Line BackgroundColor="{DynamicResource AccentColor}" HeightRequest="1" />
-            <Label Text="Current Exercise" FontSize="24" FontFamily="OpenSans-Bold" />
+            <Label Text="Current Exercises" FontSize="24" FontFamily="OpenSans-Bold" Padding="10, 0" />
             <!-- <Line BackgroundColor="{DynamicResource AccentColor}" HeightRequest="1" /> -->
             
-            <StackLayout x:Name="NoExercisesText" IsVisible="{Binding NoItemsInList}" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <StackLayout IsVisible="{Binding NoItemsInList}"
+                         Orientation="Horizontal"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="Center">
+                
                 <Image Source="{local:ImageResource PhysioCam.Assets.Icons.photo_library.png}" VerticalOptions="Center" />
-                <Label Text="No Exercise" VerticalOptions="Center" FontSize="24" />
+                <Label Text="No Exercises" VerticalOptions="Center" FontSize="24" />
+                
             </StackLayout>
                 
-            <ListView x:Name="MyListView"
+            <ListView IsVisible="{Binding ItemsInList}"
                       ItemsSource="{Binding Exercises}"
                       ItemTapped="MyListView_OnItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding Title}" />
+                            <Label Text="{Binding Title}" Padding="10, 0" />
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -20,6 +20,10 @@ namespace PhysioCam.View
         //string PhotoPath;
         private ExerciseVm _exerciseVm;
 
+        public ExercisePage() : this(new ExerciseVm())
+        {
+        }
+
         public ExercisePage(ExerciseVm exerciseVm)
         {
             InitializeComponent();

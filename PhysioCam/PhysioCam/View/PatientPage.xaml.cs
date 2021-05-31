@@ -15,7 +15,7 @@ namespace PhysioCam.View
         public PatientPage()
         {
             InitializeComponent();
-            this.BindingContext = this;
+            BindingContext = this;
         }
         public List<Patient> Patients { get => PatientData(); }
 
